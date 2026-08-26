@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nash Hong Dreamland</title>
+  <meta name="description" content="Nash Hong 的梦境空间：作品、日常、文章、闲话、音乐与关于。">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <canvas id="stars"></canvas>
+  <div class="glow"></div>
+  <div class="noise"></div>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">Nash Hong Dreamland</a>
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="works.html">作品</a></li>
+          <li><a href="daily.html">日常</a></li>
+          <li><a href="articles.html">文章</a></li>
+          <li><a href="notes.html">闲话</a></li>
+          <li><a href="music.html">音乐</a></li>
+          <li><a href="about.html">关于</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="hero-kicker">Nash Hong · Personal Space</div>
+      <h1>Nash Hong Dreamland</h1>
+      <p>这里是 Nash 的Dreamland，梦境，理想，或者混沌。</p>
+    </section>
+
+    <section class="container">
+      <h2 class="section-title">板块</h2>
+      <div class="grid">
+        <a class="card" href="works.html">
+          <div class="card-icon pink">作</div>
+          <div class="en">Works</div>
+          <h3>作品</h3>
+          <p>归档那些已落地的创意。</p>
+          <span class="count">查看作品 →</span>
+        </a>
+
+        <a class="card" href="daily.html">
+          <div class="card-icon purple">常</div>
+          <div class="en">Daily</div>
+          <h3>日常</h3>
+          <p>生活里的零碎片段、照片与流水账。</p>
+          <span class="count">查看日常 →</span>
+        </a>
+
+        <a class="card" href="articles.html">
+          <div class="card-icon cyan">文</div>
+          <div class="en">Articles</div>
+          <h3>文章</h3>
+          <p>长文与思考，认真写下的一些东西。</p>
+          <span class="count">查看文章 →</span>
+        </a>
+
+        <a class="card" href="notes.html">
+          <div class="card-icon mixed">话</div>
+          <div class="en">Notes</div>
+          <h3>闲话</h3>
+          <p>短句、随想，以及不吐不快的小片段。</p>
+          <span class="count">查看闲话 →</span>
+        </a>
+
+        <a class="card" href="music.html">
+          <div class="card-icon cypurple">乐</div>
+          <div class="en">Music</div>
+          <h3>音乐</h3>
+          <p>最近在听的歌、喜欢的旋律与歌单。</p>
+          <span class="count">查看音乐 →</span>
+        </a>
+
+        <a class="card" href="about.html">
+          <div class="card-icon pink">我</div>
+          <div class="en">About</div>
+          <h3>关于</h3>
+          <p>我是谁，我在做什么，以及如何找到我。</p>
+          <span class="count">查看关于 →</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Nash Hong Dreamland · 由 Claude Code 搭建</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

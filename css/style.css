@@ -385,6 +385,7 @@ a { color: inherit; text-decoration: none; }
   display: flex;
   align-items: center;
   justify-content: center;
+  object-fit: cover;
   font-family: var(--font-serif);
   font-size: 34px;
   font-weight: 700;
@@ -427,6 +428,108 @@ a { color: inherit; text-decoration: none; }
 .tag:hover {
   text-shadow: 0 0 8px var(--icon-cyan);
   border-color: rgba(125, 227, 244, 0.6);
+}
+
+/* ---------- 关于页社交图标 ---------- */
+.about-links {
+  display: flex;
+  gap: 18px;
+  margin-top: 26px;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: transparent;
+  border: 1px solid rgba(255, 192, 203, 0.28);
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.social-link img {
+  max-width: 70%;
+  max-height: 70%;
+  object-fit: contain;
+}
+
+/* bili 是横向小电视，默认 70% 在方框里留白太多，单独放大 */
+.social-link .bili-icon {
+  max-width: 96%;
+  max-height: 96%;
+}
+
+.social-link:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 192, 203, 0.7);
+  box-shadow: 0 8px 20px rgba(255, 192, 203, 0.35);
+}
+
+/* ---------- 通用图片查看器（灯箱） ---------- */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.66);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  cursor: zoom-out;
+}
+.lightbox.open {
+  display: flex;
+}
+.lightbox img {
+  max-width: min(92vw, 1080px);
+  max-height: 84vh;
+  border-radius: 14px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.55);
+}
+
+/* ---------- 日常页图片网格 ---------- */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  padding-bottom: 96px;
+}
+.gallery-item {
+  display: flex;
+  flex-direction: column;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  cursor: zoom-in;
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+}
+.gallery-item img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+.gallery-caption {
+  padding: 10px 14px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-body);
+  text-align: center;
+  background: rgba(27, 27, 47, 0.55);
+  border-top: 1px solid var(--line);
+}
+.gallery-item:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 192, 203, 0.55);
+  box-shadow: 0 14px 36px rgba(255, 192, 203, 0.22);
+}
+
+/* 所有可点开放大的元素：悬停提示放大 */
+[data-lightbox] {
+  cursor: zoom-in;
 }
 
 /* ---------- 音乐页 ---------- */
@@ -496,6 +599,7 @@ a { color: inherit; text-decoration: none; }
 /* ---------- 响应式 ---------- */
 @media (max-width: 720px) {
   .grid { grid-template-columns: 1fr; }
+  .gallery { grid-template-columns: 1fr; }
 
   .nav-links {
     position: absolute;
@@ -615,4 +719,17 @@ a { color: inherit; text-decoration: none; }
 }
 .aplayer .aplayer-list ol li.aplayer-list-light .aplayer-list-title {
   color: var(--icon-cyan) !important;
+}
+
+/* ===== 粉色星星光标 ===== */
+body.custom-cursor,
+body.custom-cursor * {
+  cursor: none !important;
+}
+
+#cursorCanvas {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 99999;
 }

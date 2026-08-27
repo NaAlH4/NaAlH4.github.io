@@ -4,7 +4,19 @@
       "Bash(curl -sS \"https://api.github.com/repos/NaAlH4/NaAlH4.github.io/contents/\")",
       "Bash(curl -sS \"https://api.github.com/repos/NaAlH4/NaAlH4.github.io/commits?per_page=10\")",
       "Bash(curl -sS \"https://api.github.com/repos/NaAlH4/NaAlH4.github.io/contents/css\")",
-      "Bash(curl -sS \"https://api.github.com/repos/NaAlH4/NaAlH4.github.io/contents/js\")"
+      "Bash(curl -sS \"https://api.github.com/repos/NaAlH4/NaAlH4.github.io/contents/js\")",
+      "Bash(curl -sS -o css/aplayer.min.css \"https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css\")",
+      "Bash(curl -sS -o js/aplayer.min.js \"https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js\")",
+      "Bash(grep -oE 'narrow[^,;{}]{0,80}' js/aplayer.min.js)",
+      "Bash(grep -oE 'mini[^,;{}]{0,60}' js/aplayer.min.js)",
+      "Bash(grep -oE 'mini:e\\\\.narrow\\\\|e\\\\.fixed\\\\|!1.{0,600}' js/aplayer.min.js)",
+      "Bash(grep -oE 'mini:e\\\\.narrow[^;]{0,120}' js/aplayer.min.js)",
+      "Bash(grep -oE 'storageName:\"aplayer-setting\"\\\\}[^}]{0,400}' js/aplayer.min.js)",
+      "Bash(node -e \"const s=require\\('fs'\\).readFileSync\\('js/aplayer.min.js','utf8'\\); const i=s.indexOf\\('aplayer-info'\\); console.log\\(JSON.stringify\\(s.slice\\(i-50, i+900\\)\\)\\);\")",
+      "Bash(node -e \"const s=require\\('fs'\\).readFileSync\\('js/aplayer.min.js','utf8'\\); let idx=0; while\\(\\(idx=s.indexOf\\('style.display',idx\\)\\)!==-1\\){ console.log\\('---'\\); console.log\\(JSON.stringify\\(s.slice\\(idx-220, idx+60\\)\\)\\); idx+=10; }\")",
+      "Bash(node -e \"const s=require\\('fs'\\).readFileSync\\('js/aplayer.min.js','utf8'\\); const i=s.indexOf\\('this.template.info.offsetWidth'\\); console.log\\(JSON.stringify\\(s.slice\\(i-260, i+320\\)\\)\\);\")",
+      "Bash(node -e \"const s=require\\('fs'\\).readFileSync\\('js/aplayer.min.js','utf8'\\); const i=s.indexOf\\('setMode'\\); const j=s.indexOf\\('setMode', i+1\\); console.log\\(JSON.stringify\\(s.slice\\(j-30, j+400\\)\\)\\);\")",
+      "Bash(node -e \"const s=require\\('fs'\\).readFileSync\\('js/aplayer.min.js','utf8'\\); const i=s.indexOf\\('classList.add\\(\\\\\"aplayer-narrow\\\\\"\\)'\\); console.log\\('=== setMode 定义 ==='\\); console.log\\(JSON.stringify\\(s.slice\\(i-160, i+260\\)\\)\\);\")"
     ]
   }
 }

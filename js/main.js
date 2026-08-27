@@ -228,6 +228,14 @@ if (canvas) {
       const newMain = doc.querySelector('main');
       const currentMain = document.querySelector('main');
       if (newMain && currentMain) {
+        // 子页靠 <main class="container"> 实现居中；只换 innerHTML 会丢掉 class，
+        // 导致内容全宽靠左。这里同步 <main> 自身的属性（class 等），保证切页后布局一致。
+        Array.from(currentMain.attributes).forEach((attr) =>
+          currentMain.removeAttribute(attr.name)
+        );
+        Array.from(newMain.attributes).forEach((attr) =>
+          currentMain.setAttribute(attr.name, attr.value)
+        );
         currentMain.innerHTML = newMain.innerHTML;
       }
 

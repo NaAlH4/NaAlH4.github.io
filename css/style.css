@@ -352,6 +352,54 @@ a { color: inherit; text-decoration: none; }
   min-width: 0;
 }
 
+/* ---------- 作品页外链（github / steam 等） ---------- */
+.entry-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+/* 默认 a{color:inherit;text-decoration:none} 会吃掉链接样式，这里显式覆盖 */
+.entry-links .ext-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  max-width: 100%;
+  padding: 5px 14px;
+  border: 1px solid rgba(125, 227, 244, 0.35);
+  border-radius: 999px;
+  background: rgba(125, 227, 244, 0.1);
+  color: #9FECF8;
+  font-size: 13px;
+  line-height: 1.6;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  transition: color 0.2s, background 0.2s, border-color 0.2s,
+              box-shadow 0.2s, transform 0.2s;
+}
+
+.entry-links .ext-link::after {
+  content: '↗';
+  font-size: 11px;
+  opacity: 0.75;
+  flex-shrink: 0;
+}
+
+.entry-links .ext-link:hover,
+.entry-links .ext-link:focus-visible {
+  color: var(--text-bright);
+  background: rgba(125, 227, 244, 0.22);
+  border-color: rgba(125, 227, 244, 0.75);
+  box-shadow: 0 0 14px rgba(125, 227, 244, 0.35);
+  transform: translateY(-1px);
+}
+
+.entry-links .ext-link:focus-visible {
+  outline: 2px solid var(--icon-cyan);
+  outline-offset: 2px;
+}
+
 .empty {
   color: var(--text-faint);
   font-size: 15px;
